@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }  
+
+        .Gridparent {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, minmax(100px, 1fr));
+
+            grid-template-areas:
+                "header"
+                "main"                
+                "sidebar"                
+                "footer"
+                ".";
+
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+
+        .class_header {
+            grid-area: header;
+            background-color: blue;
+        }
+
+        .class_main {
+            grid-area: main;
+            background-color: green;
+        }
+
+        .c_sidebar {
+            grid-area: sidebar;
+            background-color: red;
+        }
+
+        .c_footer {
+            grid-area: footer;
+            background-color: aqua;
+            display: flex;
+        }
+
+        .no_area {
+            background-color: black;
+        }
+
+        .son {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            background-color: violet;
+            z-index: 1;
+        }
+
+        @media screen and (min-width: 600px) {
+            .Gridparent {
+
+                grid-template-columns: 150px 1fr 300px;
+                grid-template-rows: repeat(5, minmax(100px, 1fr));
+
+                grid-template-areas:
+                    "header header header"
+                    "main main sidebar"
+                    "main main sidebar"
+                    ". . ."
+                    "footer footer footer"
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Gridparent">
+        <div class="class_header"></div>
+        <div class="class_main"></div>
+        <div class="c_sidebar"></div>
+        <div class="no_area"></div>
+        <div class="no_area"></div>
+        <div class="no_area"></div>
+        <div class="c_footer"></div>
+        <!-- <div class="son"></div> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+
+}
+
+
+
+Nombre
+segundo nombre
+Apellido
+Edad
+Telefonos -> arreglo de objetos tipo telefono(-> diccionario con tipo y el numero )
+Direccion -> Provincia, canton, distrito, pueblo, señas
+activo ?
+
+
+
+let user = {...}
+
+user.Telefonos[0].home

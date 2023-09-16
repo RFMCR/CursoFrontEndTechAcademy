@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cardContainer {
+            display: flex;
+            width: 200px;
+            height: 400px;
+            flex-direction: column;
+            /* border: solid rgb(98, 98, 244) 2px; */
+            padding: 5px;
+            background-color: rgb(95, 129, 185);
+        }
+
+        .picture {
+            width: 100%;
+            height: 200px;
+            /* border: solid red 1px; */
+            overflow: hidden;
+        }
+
+        .picture>img {
+            width: 100%;
+        }
+
+        .picture:hover {
+            overflow: scroll;
+        }
+
+
+        .cardContainer>p {
+            text-align: center;
+        }
+
+        .cardContainer :first-child {
+            font-weight: bold;
+        }
+
+        .flexContainer {
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button id="btn_getall">Traer Tienda</button>
+    </div>
+
+    <div class="flexContainer" id="div_flex_container">
+
+        <!-- <div class="cardContainer">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+            <div class="picture">
+                <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="">
+            </div>
+            <p style="color:white">Fuga earum ea ipsam quisquam modi quidem impedit, inventore eum quasi distinctio officia nemo aperiam,
+                exercitationem autem cupiditate aliquam nostrum aut debitis?</p>
+        </div> -->
+    </div>
+</body>
+<script>
+    // fetch('https://fakestoreapi.com/products')
+    //     .then(res => res.json())
+    //     .then(json => console.log(json))
+    const Url = 'https://fakestoreapi.com/products'
+
+    const btn_getall = document.getElementById("btn_getall");
+    btn_getall.addEventListener("click", getStore);
+
+    function getStore() {
+        fetch(Url)
+            .then((promise) => promise.json())
+            .then(result => createpage(result));
+    }
+
+    function createpage(productarray) {
+        ///Your code Here
+        //console.log(productarray[0].title,productarray[0].image, productarray[0].description);
+
+        for (let i = 0; i < productarray.length; i++) {
+            //Create a Div with the class cardContainer
+            let cardcontainer = document.createElement("div");
+            cardcontainer.classList.add("cardContainer");
+
+            //Create card elements
+            let title = document.createElement("p");
+            title.innerText = productarray[i].title;
+            cardcontainer.appendChild(title);
+
+            let picture = document.createElement("div");
+            picture.classList.add("picture");
+            cardcontainer.appendChild(picture);
+
+            let image = document.createElement("img");
+            image.src = productarray[i].image
+            picture.appendChild(image);
+
+            let descr = document.createElement("p");
+            descr.innerText = productarray[i].description;
+            descr.style.color = "white";
+            cardcontainer.appendChild(descr);
+
+
+            //Find parent element to add a child
+            let parent = document.getElementById("div_flex_container");
+            parent.appendChild(cardcontainer);
+        }
+    }    
+</script>
+
+</html>

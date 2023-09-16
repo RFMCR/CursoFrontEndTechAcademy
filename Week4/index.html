@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txtsearch {
+            height: 40px;
+            width: 550px;
+            border-radius: 50px;
+            padding-left: 50px;
+
+        }
+
+        #txtsearch::before {
+            content: url("./Week4/images/search.png")
+        }
+
+        div>img {
+            height: 30px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .button_box {
+            margin: 20px;
+        }
+
+        .buttons {
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="txtsearch">
+        <img src="./Week4/images/search.png" alt="">
+    </div>
+    <div class="button_box">
+        <input class="buttons" type="button" value="Clear">
+        <input class="buttons" type="button" value="Search" onclick="getTextFromInput()">
+    </div>
+</body>
+<script>
+
+    let txt = document.getElementById("txtsearch");
+    if (txt != null) {
+            txt.placeholder = "Enter text here";
+        }
+
+    debugger
+        
+    let msg = "hello Everyone";
+    console.log("Console Log:", msg)
+
+    function getTextFromInput() {               
+        const searchtext = txt.value;
+        console.log(searchtext)
+    }
+
+    /*---------------------------*/
+    let btnsearch = document.getElementsByClassName("buttons");
+    //console.warn(btnsearch)
+
+    let buttonsearch = null;
+    for (let index = 0; index < btnsearch.length; index++) {
+        if (btnsearch[index].value === "Search"){
+            //console.log("El indice es: ", index)
+            buttonsearch = btnsearch[index];
+        }
+    }
+
+    //console.log(buttonsearch);
+
+   // txt.addEventListener("blur", getTextFromInput)
+
+    txt.addEventListener("keypress", detectEnterKey)
+
+    function detectEnterKey(evt){
+        //console.log(evt)
+        if (evt.keyCode === 13){
+            //console.log("ENter Key Pressed")
+            getTextFromInput();
+        }
+    }
+</script>
+
+</html>

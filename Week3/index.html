@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Pages 3</title>
+    <style>
+        
+        p{
+            color:green
+        }
+
+        a{
+            color: gray;
+        }
+        span{
+            color:blue;
+        }
+        .bigFont{
+            font-size: 25px;
+            margin:50px;
+        }
+        .underline{
+            text-decoration: underline;
+            text-transform:uppercase;
+        }
+        #lnkforms{
+            display: block;
+            
+        }
+
+        #lnkforms,
+        .bigFont,
+        span{
+            border: black 1px solid;
+        }
+
+        a[href*="google"]:hover{
+            font-size: 50px;
+        }
+
+        p::first-line{
+            text-transform:uppercase;
+        }
+
+        body > p:last-of-type::first-letter{
+            font-size: 75px;
+            font-weight: bold;
+            font-family: cursive;
+        }
+
+        #p_ultimo{
+            border: dashed 5px blue;
+            padding: 50px;
+            padding-top:10px;
+            margin: 150px;
+            margin-left: -2300px;
+        }
+
+        div{
+            width: 200px;
+            border: dashed blue 1px;
+        }
+
+        div > p{
+            border: solid rgba(0, 51, 255, 0.595) 1px;
+            width: 100%;
+        }
+
+        #c1{
+            width: 300px;
+            height: 300px;
+            background-color: rgba(0, 0, 255, 1);
+        }
+
+        #c2{
+            width: 100px;
+            height: 100px;
+            /* background-color: rgba(255, 0, 0, 0.5); */
+            background-color: #ff000050;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Bye Now
+    </header>
+    <p>Hello everyone</p>
+    <span class="bigFont">Hi there</span>
+    <p>A Hola</p>
+
+    <div>
+        <p>Otro contenedor</p>
+    </div>
+
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <h3>Header 3</h3>
+    <h4>Header 4</h4>
+    <h5>Header 5</h5>
+    <h6 class="bigFont underline">Header 6</h6>
+    
+    <p>Este es un <i><u><b>párrafo</b></u></i><strong>Bolded and strong</strong>
+        , however<span class="bigFont" style="color:red"> this</span> has a different color</p>
+    
+<p>hello <p class="underline">there</p></p>
+
+<a href="https://www.google.com" target="_blank">Click Here</a>
+<a href="./forms.html" id="lnkforms">Page Forms</a>
+
+
+<p id="p_ultimo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum ratione assumenda ducimus, sit mollitia vitae. Quod facere excepturi, voluptas laudantium eum placeat tenetur perferendis, aliquid, consectetur ab necessitatibus modi corporis.
+Voluptate deleniti sapiente recusandae consequatur provident ipsum quis laborum labore aliquam velit. Recusandae eos aliquid cumque excepturi, nemo ex magnam tempora eveniet iste voluptatum deserunt animi eligendi suscipit hic eum.
+Optio doloremque ex dolorum. Eaque voluptate nam enim nostrum, sequi fugit quos optio expedita dolorem. Obcaecati inventore pariatur nisi esse. Nostrum pariatur perspiciatis, animi quae aliquid commodi eos sapiente optio!</p>
+
+<div id="c1">
+    <div id="c2"></div>
+</div>
+
+</body>
+</html>
+
+<!-- 
+p
+div
+a
+H1....H6
+b
+u
+i
+span -->

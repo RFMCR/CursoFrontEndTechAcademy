@@ -1,0 +1,52 @@
+/* p {
+    color: red
+} */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100Vh;
+    overflow: hidden;
+}
+
+#background {
+    /* border: 1px black solid; */
+    height: 100%;
+    background-image: url("../Images/Guitar-Hero-Slash.webp");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 50vh;
+    padding-left: 20vw;
+}
+
+#button_container{
+    /* border: 1px solid red; */
+    /* margin-top: 50px; */
+    padding: 5px;
+    /* overflow:scroll; */    
+}
+
+.button{
+    width: 15px;
+    margin: 30px;
+    border: solid black 1px;
+    padding: 15px;
+    background-color: white;
+}
+
+.button,
+.button > p{
+    display: inline-block;   
+    text-align: center;
+}
+
+.button:hover,
+.playing{
+    background-color: blue;
+    color: white;
+    transform: scale(1.5);
+    cursor:pointer;
+}
